@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!-- 设置上下文名称 -->
+    <contextName>logback</contextName>
+
+    <!-- 控制台输出配置 -->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 控制输出级别 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <!-- 对日志格式进行编码 -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %c - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 文件日志输出配置 -->
+    <appender name="fileLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            log/report/demo.log
+        </file>
+        <!-- <append>true</append> -->
+        <!-- 控制输出级别 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/demo/logback.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %c - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <root>
+        <appender-ref ref="consoleLog" />
+        <appender-ref ref="fileLog"/>
+    </root>
+</configuration>

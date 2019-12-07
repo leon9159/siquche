@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.weather.siquche.mapper.DatasMapper;
 import com.weather.siquche.povo.po.Datas;
+import com.weather.siquche.povo.vo.LargeVO;
 import com.weather.siquche.povo.vo.TableVO;
 import com.weather.siquche.povo.vo.TimeVO;
 import com.weather.siquche.service.IDatasService;
@@ -41,5 +42,27 @@ public class DatasServiceImpl extends ServiceImpl<DatasMapper, Datas> implements
                 });
         return TableVOS.collect(Collectors.toList());
    }
+
+   public Object getLarge(){
+        QueryWrapper<Datas> qw = new QueryWrapper<>();
+        qw.select("PM25","PM10","SO2","NO2","CO","O3");
+        List<Datas> ls = datasMapper.selectList(qw);
+        LargeVO largeVO = new LargeVO();
+        largeVO.setPm25(ls.stream().map(datas -> datas.getPM25())
+                .collect(Collectors.toList()));
+        largeVO.setPm10(ls.stream().map(datas -> datas.getPM10())
+               .collect(Collectors.toList()));
+        largeVO.setSo2(ls.stream().map(datas -> datas.getSO2())
+               .collect(Collectors.toList()));
+        largeVO.setNo2(ls.stream().map(datas -> datas.getNO2())
+               .collect(Collectors.toList()));
+        largeVO.setCo(ls.stream().map(datas -> datas.getCO())
+               .collect(Collectors.toList()));
+        largeVO.setO3(ls.stream().map(datas -> datas.getO3())
+               .collect(Collectors.toList()));
+        return largeVO;
+
+    }
+
 
 }

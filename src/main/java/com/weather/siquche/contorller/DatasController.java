@@ -27,4 +27,11 @@ public class DatasController {
         return datasService.getTable(date);
     }
 
+    @CrossOrigin
+    @ApiOperation(value = "大数据面积图")
+    @GetMapping("/large")
+    public Object getLarge(){
+        return datasService.getLarge();
+    }
+
 }

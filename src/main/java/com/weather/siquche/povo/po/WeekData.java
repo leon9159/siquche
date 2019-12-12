@@ -26,10 +26,11 @@ public class WeekData {
     @TableField(value = "CO")
     private Double CO;
     private Double O3;
-    private String temp;
-    private String dewp;
-    private Integer rain;
-    private String wd;
+    private Double temp;
+    private Double dewp;
+    private Double PRES;
+    private Double rain;
+    private Double wd;
     private Double wspm;
     @TableField(value = "station")
     private String stationName;

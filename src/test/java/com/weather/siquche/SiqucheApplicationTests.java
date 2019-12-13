@@ -3,31 +3,32 @@ package com.weather.siquche;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.weather.siquche.mapper.AverageMapper;
 import com.weather.siquche.mapper.DayDataMapper;
-import com.weather.siquche.mapper.WeekMapper;
 import com.weather.siquche.povo.po.AverageData;
 import com.weather.siquche.povo.po.DayData;
-import com.weather.siquche.povo.po.WeekData;
-import com.weather.siquche.povo.vo.AqiVo;
-import com.weather.siquche.util.Util;
+import com.weather.siquche.povo.vo.TimeVO;
+import com.weather.siquche.service.serviceImpl.AverageServiceImpl;
+import com.weather.siquche.service.serviceImpl.DayDataServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 
 @SpringBootTest
 class SiqucheApplicationTests {
     @Autowired
-    private WeekMapper weekMapper;
+    private DayDataServiceImpl dayDataService;
     @Autowired
     private AverageMapper averageMapper;
     @Autowired
     private DayDataMapper dayDataMapper;
+    @Autowired
+    private AverageServiceImpl averageService;
     @Test
     public void processData() {
         QueryWrapper<AverageData> qw = new QueryWrapper<>();
@@ -84,11 +85,17 @@ class SiqucheApplicationTests {
     }
 
     @Test
-    public void testNull(){
-        String a = null;
-        String b = "b";
-        System.out.println(Objects.equals(a,b));
-        System.out.println(a.equals(b));
+    public void getHeat(){
+        TimeVO timeVO = new TimeVO();
+        LocalDate localDate = LocalDate.parse("2013-03-01");
+        timeVO.setDate(localDate);
+        Object heatVOS = dayDataService.getHeatMap(timeVO);
+        System.out.println(heatVOS);
     }
 
+    @Test
+    public void testDate(){
+        Object ave = averageService.getAqiByYear();
+        System.out.println(ave);
+    }
 }

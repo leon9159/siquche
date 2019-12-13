@@ -2,8 +2,8 @@ package com.weather.siquche.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.weather.siquche.povo.po.Station;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
-@Mapper
+@Repository
 public interface StationMapper extends BaseMapper<Station> {
 }

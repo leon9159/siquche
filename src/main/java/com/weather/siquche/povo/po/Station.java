@@ -10,4 +10,6 @@ public class Station {
     @TableId
     private Integer stationId;
     private String stationName;
+    private Double lng;
+    private Double lat;
 }

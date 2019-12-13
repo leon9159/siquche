@@ -11,4 +11,5 @@ public class TableVO {
     private Double NO2;
     private Double CO;
     private Double O3;
+    private Double aqi;
 }

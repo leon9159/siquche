@@ -14,5 +14,6 @@ public class AverageData {
     private Double co;
     private Double o3;
     private String date;
-    private Double api;
+    private Double aqi;
+    private String week;
 }

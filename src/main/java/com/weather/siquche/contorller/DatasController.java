@@ -55,7 +55,7 @@ public class DatasController {
 
     @CrossOrigin
     @PostMapping("/heatmap")
-    public List<HeatMapVO> getHeatMap(@RequestBody TimeVO timeVO){
+    public Object getHeatMap(@RequestBody TimeVO timeVO){
         if(timeVO.getDate()==null){
             timeVO.setDate(LocalDate.parse("2013-03-01"));
         }

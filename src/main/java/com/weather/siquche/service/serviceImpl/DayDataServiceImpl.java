@@ -86,7 +86,7 @@ public class DayDataServiceImpl extends ServiceImpl<DayDataMapper, DayData> impl
      * @param timeVO
      * @return
      */
-    public List<HeatMapVO> getHeatMap(TimeVO timeVO){
+    public Object getHeatMap(TimeVO timeVO){
         List<HeatVO> datas = getHeatData(timeVO);
         List<HeatMapVO> heatMapVOS = datas.stream().map(heatVO -> {
             HeatMapVO heatMapVO = new HeatMapVO();

@@ -95,7 +95,7 @@ class SiqucheApplicationTests {
 
     @Test
     public void testDate(){
-        Object ave = averageService.getAqiByYear();
+        Object ave = averageService.getAqiByWeek();
         System.out.println(ave);
     }
 }

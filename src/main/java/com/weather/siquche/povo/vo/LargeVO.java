@@ -13,4 +13,5 @@ public class LargeVO {
     private List<Double> co;
     private List<Double> o3;
     private List<Double> AQI;
+    private List<String> date;
 }

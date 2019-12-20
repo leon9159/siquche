@@ -27,7 +27,7 @@ public class AverageServiceImpl extends ServiceImpl<AverageMapper, AverageData> 
      */
     public Object getLarge(){
         QueryWrapper<AverageData> qw = new QueryWrapper<>();
-        qw.select("pm25","pm10","so2","no2","co","o3","aqi");
+        qw.select("pm25","pm10","so2","no2","co","o3","aqi","date");
         List<AverageData> ls = averageMapper.selectList(qw);
         LargeVO largeVO = new LargeVO();
         largeVO.setPm25(ls.stream().map(datas ->datas.getPm25())
@@ -43,6 +43,8 @@ public class AverageServiceImpl extends ServiceImpl<AverageMapper, AverageData> 
         largeVO.setO3(ls.stream().map(datas -> datas.getO3())
                 .collect(Collectors.toList()));
         largeVO.setAQI(ls.stream().map(datas -> datas.getAqi())
+                .collect(Collectors.toList()));
+        largeVO.setDate(ls.stream().map(datas-> datas.getDate())
                 .collect(Collectors.toList()));
         return largeVO;
     }

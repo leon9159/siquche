@@ -5,14 +5,13 @@ import com.weather.siquche.mapper.AverageMapper;
 import com.weather.siquche.mapper.DayDataMapper;
 import com.weather.siquche.povo.po.AverageData;
 import com.weather.siquche.povo.po.DayData;
-import com.weather.siquche.povo.vo.TimeVO;
+
 import com.weather.siquche.service.serviceImpl.AverageServiceImpl;
 import com.weather.siquche.service.serviceImpl.DayDataServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -86,11 +85,8 @@ class SiqucheApplicationTests {
 
     @Test
     public void getHeat(){
-        TimeVO timeVO = new TimeVO();
-        LocalDate localDate = LocalDate.parse("2013-03-01");
-        timeVO.setDate(localDate);
-        Object heatVOS = dayDataService.getHeatMap(timeVO);
-        System.out.println(heatVOS);
+        var res = dayDataService.getCalendar();
+        System.out.println(res);
     }
 
     @Test

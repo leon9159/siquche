@@ -1,0 +1,28 @@
+09:20:34.482 INFO  com.weather.siquche.SiqucheApplication - Starting SiqucheApplication on 0FCUYVOZI99DT1M with PID 8284 (D:\siquche\siquche\target\classes started by Administrator in D:\siquche\siquche)
+09:20:34.507 INFO  com.weather.siquche.SiqucheApplication - No active profile set, falling back to default profiles: default
+09:20:34.713 INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+09:20:34.714 INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+09:20:37.082 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+09:20:37.092 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+09:20:37.139 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+09:20:37.685 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.weather.siquche.cofig.RedisConfig$$EnhancerBySpringCGLIB$$c446a538] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+09:20:37.690 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+09:20:38.447 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8443 (http)
+09:20:38.462 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8443"]
+09:20:38.463 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:20:38.464 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+09:20:38.730 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:20:38.730 INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4016 ms
+09:20:40.644 INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+09:20:41.697 INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+09:20:42.284 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+09:20:42.372 INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+09:20:42.823 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+09:20:42.872 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+09:20:42.909 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+09:20:43.118 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8443"]
+09:20:43.237 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8443 (http) with context path ''
+09:20:43.240 INFO  com.weather.siquche.SiqucheApplication - Started SiqucheApplication in 10.311 seconds (JVM running for 14.737)
+09:25:03.619 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:25:03.621 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+09:25:03.632 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms

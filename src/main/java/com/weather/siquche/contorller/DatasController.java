@@ -53,7 +53,7 @@ public class DatasController {
             timeVO.setDate(LocalDate.parse("2013-03-01"));
         }
         return dayDataService.getHeatMap(timeVO);
-
     }
+
 
 }

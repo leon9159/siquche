@@ -8,10 +8,7 @@ import com.weather.siquche.mapper.StationMapper;
 import com.weather.siquche.povo.po.AverageData;
 import com.weather.siquche.povo.po.DayData;
 import com.weather.siquche.povo.po.Station;
-import com.weather.siquche.povo.vo.HeatMapVO;
-import com.weather.siquche.povo.vo.HeatVO;
-import com.weather.siquche.povo.vo.TableVO;
-import com.weather.siquche.povo.vo.TimeVO;
+import com.weather.siquche.povo.vo.*;
 import com.weather.siquche.service.IDayDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -96,6 +93,19 @@ public class DayDataServiceImpl extends ServiceImpl<DayDataMapper, DayData> impl
             return heatMapVO;
         }).collect(Collectors.toList());
         return heatMapVOS;
+    }
+
+    public Object getCalendar(){
+        QueryWrapper<DayData> qw = new QueryWrapper<>();
+        qw.select("aqi","date").eq("station_id",1);
+        List<DayData> ls = dayDataMapper.selectList(qw);
+        List<CalendarVo> res = ls.stream().map(dayData -> {
+            CalendarVo calendarVo = new CalendarVo();
+            calendarVo.setAqi(dayData.getAqi());
+            calendarVo.setDate(dayData.getDate());
+            return calendarVo;
+        }).collect(Collectors.toList());
+        return res;
     }
 
 }

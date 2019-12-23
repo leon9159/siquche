@@ -1,8 +1,10 @@
 package com.weather.siquche.contorller;
 
+import com.weather.siquche.povo.po.Forecast;
 import com.weather.siquche.povo.vo.TimeVO;
 import com.weather.siquche.service.serviceImpl.AverageServiceImpl;
 import com.weather.siquche.service.serviceImpl.DayDataServiceImpl;
+import com.weather.siquche.service.serviceImpl.ForecastServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,8 @@ public class DatasController {
     private AverageServiceImpl averageService;
     @Autowired
     private DayDataServiceImpl dayDataService;
+    @Autowired
+    private ForecastServiceImpl forecastService;
 
     /**
      * 根据所选时间返回table中的数据
@@ -53,6 +57,11 @@ public class DatasController {
             timeVO.setDate(LocalDate.parse("2013-03-01"));
         }
         return dayDataService.getHeatMap(timeVO);
+    }
+    @ApiOperation(value = "预测")
+    @GetMapping("/forecast")
+    public Object getForecastData(){
+        return forecastService.getForecastData();
     }
 
 

@@ -8,6 +8,7 @@ import com.weather.siquche.povo.po.DayData;
 
 import com.weather.siquche.service.serviceImpl.AverageServiceImpl;
 import com.weather.siquche.service.serviceImpl.DayDataServiceImpl;
+import com.weather.siquche.service.serviceImpl.ForecastServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,6 +29,8 @@ class SiqucheApplicationTests {
     private DayDataMapper dayDataMapper;
     @Autowired
     private AverageServiceImpl averageService;
+    @Autowired
+    private ForecastServiceImpl forecastService;
     @Test
     public void processData() {
         QueryWrapper<AverageData> qw = new QueryWrapper<>();
@@ -85,7 +88,7 @@ class SiqucheApplicationTests {
 
     @Test
     public void getHeat(){
-        var res = dayDataService.getCalendar();
+        var res = forecastService.getForecastData();
         System.out.println(res);
     }
 
